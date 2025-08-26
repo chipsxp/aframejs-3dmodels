@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 /* Info panel that can be added to the scene */
@@ -18,4 +19,103 @@ body {
   font-family: Arial, sans-serif;
   z-index: 999;
   pointer-events: none;
+}
+
+/* Model Card Styles */
+#model-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#model-card-header {
+  border: 2px solid black;
+  border-bottom: none;
+  padding: 15px 20px;
+  background: #f5f5f5;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#model-card-body {
+  border: 2px solid black;
+  border-bottom: none;
+  border-top: none;
+  padding: 20px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+#model-container {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#model-container a-scene {
+  width: 100%;
+  height: 100%;
+}
+
+#model-card-footer {
+  border: 2px solid black;
+  border-top: none;
+  padding: 15px 20px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#model-card button {
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+#model-card button:hover {
+  background: #e0e0e0;
+}
+
+#close-card {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#close-card:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>A-Frame VR Experience</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -17,30 +18,46 @@
         <a-asset-item id="frog" src="FrodOrchestraOculusReady.glb"></a-asset-item>
       </a-assets>
 
-      <a-gltf-model src="#raccoon" position="3 2 -5" scale="0.7 0.7 0.7"
+      <a-gltf-model data-title="White Raccoon" src="#raccoon" position="3 3 -4" scale="0.7 0.7 0.7"
               animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
               class="interactive"
               interactive-model>
       </a-gltf-model>
 
-      <a-gltf-model src="#rabbit" position="-1 2 -3" scale="0.7 0.7 0.7"
+      <a-gltf-model data-title="Grey Rabbit" src="#rabbit" position="1 2 -3" scale="0.7 0.7 0.7"
               animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
               class="interactive"
               interactive-model>
       </a-gltf-model>
 
-      <a-gltf-model src="#frog" position="-2 5 -6" scale="0.7 0.7 0.7"
+      <a-gltf-model data-title="Frog Orchestra" src="#frog" position="-3 1 -5" scale="0.7 0.7 0.7"
               animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
               class="interactive"
               interactive-model>
       </a-gltf-model>
 
       <!-- Camera and cursor -->
-      <a-entity position="0 2 0">
+      <a-entity id="camera-rig" position="0 2 0">
         <a-camera>
           <a-cursor color="#FBBBCC" raycaster="objects: .interactive"></a-cursor>
         </a-camera>
       </a-entity>
     </a-scene>
+  <!-- Model card UI -->
+  <div id="model-card">
+    <div id="model-card-header">
+      <span id="model-title">Model Title</span>
+      <button id="close-card">&times;</button>
+    </div>
+    <div id="model-card-body">
+      <div id="model-container"></div>
+    </div>
+    <div id="model-card-footer">
+      <button id="rotate-btn">Rotate</button>
+      <button id="zoom-btn">Zoom</button>
+      <button id="screenshot-btn">Screenshot</button>
+      <button id="share-btn">Share</button>
+    </div>
+  </div>
   </body>
 </html>
