@@ -1,0 +1,21 @@
+/* Custom styles for A-Frame application */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Info panel that can be added to the scene */
+.info-panel {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  z-index: 999;
+  pointer-events: none;
+}
